@@ -9,6 +9,6 @@ import java.util.List;
 import java.util.Optional;
 
 public interface SubtopicProgressRepository extends JpaRepository<SubtopicProgress, Long> {
-    Optional<SubtopicProgress> findByUserAndSubTopic(User user, Subtopic subTopic);
+    Optional<SubtopicProgress> findByUserAndSubtopic(User user, Subtopic subtopic);
     List<SubtopicProgress> findByUser(User user);
 }
