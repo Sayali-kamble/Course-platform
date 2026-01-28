@@ -1,7 +1,9 @@
 package com.edtech.course_platform.entity;
 
 import jakarta.persistence.*;
+import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 import java.time.LocalDateTime;
 
@@ -9,6 +11,8 @@ import java.time.LocalDateTime;
 @Table(name = "subtopic_progress",
         uniqueConstraints = {@UniqueConstraint(columnNames = {"user_id", "subtopic_id"})})
 @Data
+@NoArgsConstructor
+@AllArgsConstructor
 public class SubtopicProgress {
 
     @Id

@@ -1,7 +1,9 @@
 package com.edtech.course_platform.entity;
 
 import jakarta.persistence.*;
+import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 import java.time.LocalDateTime;
 import java.util.ArrayList;
@@ -11,6 +13,8 @@ import java.util.List;
 @Table(name = "enrollments",
         uniqueConstraints = {@UniqueConstraint(columnNames = {"user_id", "course_id"})})
 @Data
+@NoArgsConstructor
+@AllArgsConstructor
 public class Enrollment {
 
     @Id
