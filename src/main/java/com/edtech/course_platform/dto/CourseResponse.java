@@ -1,2 +1,15 @@
-package com.edtech.course_platform.dto;public class CourseResponse {
+package com.edtech.course_platform.dto;
+
+import lombok.AllArgsConstructor;
+import lombok.Data;
+
+@Data
+@AllArgsConstructor
+public class CourseResponse {
+
+    private String id;
+    private String title;
+    private String description;
+    private Long topicCount;
+    private Long subtopicCount;
 }
