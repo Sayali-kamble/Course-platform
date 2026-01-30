@@ -31,12 +31,12 @@ public class GlobalExceptionHandler {
             UserAlreadyExistsException ex) {
 
         ErrorResponse errorResponse = new ErrorResponse(
-                "Bad Request",
+                "conflict",
                 ex.getMessage(),
                 Instant.now()
         );
 
-        return ResponseEntity.status(HttpStatus.BAD_REQUEST)
+        return ResponseEntity.status(HttpStatus.CONFLICT)
                 .body(errorResponse);
     }
 
