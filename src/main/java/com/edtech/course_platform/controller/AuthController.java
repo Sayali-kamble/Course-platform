@@ -1,5 +1,7 @@
 package com.edtech.course_platform.controller;
 
+import com.edtech.course_platform.dto.LoginRequest;
+import com.edtech.course_platform.dto.LoginResponse;
 import com.edtech.course_platform.dto.RegisterRequest;
 import com.edtech.course_platform.dto.RegisterResponse;
 import com.edtech.course_platform.service.AuthService;
@@ -26,5 +28,12 @@ public class AuthController {
         return ResponseEntity
                 .status(HttpStatus.CREATED)
                 .body(authService.register(request));
+    }
+
+    @PostMapping("/login")
+    public ResponseEntity<LoginResponse> login(
+            @Valid @RequestBody LoginRequest request
+    ) {
+        return ResponseEntity.ok(authService.login(request));
     }
 }
