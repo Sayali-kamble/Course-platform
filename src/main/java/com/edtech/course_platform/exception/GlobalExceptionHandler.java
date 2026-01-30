@@ -54,4 +54,32 @@ public class GlobalExceptionHandler {
                 .body(errorResponse);
     }
 
+    @ExceptionHandler(AlreadyEnrolledException.class)
+    public ResponseEntity<ErrorResponse> handleAlreadyEnrolled(
+            AlreadyEnrolledException ex) {
+
+        ErrorResponse errorResponse = new ErrorResponse(
+                "conflict",
+                ex.getMessage(),
+                Instant.now()
+        );
+
+        return ResponseEntity.status(HttpStatus.CONFLICT)
+                .body(errorResponse);
+    }
+
+    @ExceptionHandler(UserNotFoundException.class)
+    public ResponseEntity<ErrorResponse> handleUserNotFound(
+            UserNotFoundException ex) {
+
+        ErrorResponse errorResponse = new ErrorResponse(
+                "not_found",
+                ex.getMessage(),
+                Instant.now()
+        );
+
+        return ResponseEntity.status(HttpStatus.NOT_FOUND)
+                .body(errorResponse);
+    }
+
 }

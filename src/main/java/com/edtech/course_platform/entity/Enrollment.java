@@ -2,9 +2,11 @@ package com.edtech.course_platform.entity;
 
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.time.Instant;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
@@ -15,6 +17,7 @@ import java.util.List;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
+@Builder
 public class Enrollment {
 
     @Id
@@ -30,6 +33,6 @@ public class Enrollment {
     private Course course;
 
     @Column(nullable = false)
-    private LocalDateTime enrolledAt = LocalDateTime.now();
+    private Instant enrolledAt = Instant.now();
 }
 
