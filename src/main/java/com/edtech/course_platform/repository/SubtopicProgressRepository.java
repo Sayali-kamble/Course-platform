@@ -11,4 +11,9 @@ import java.util.Optional;
 public interface SubtopicProgressRepository extends JpaRepository<SubtopicProgress, Long> {
     Optional<SubtopicProgress> findByUserAndSubtopic(User user, Subtopic subtopic);
     List<SubtopicProgress> findByUser(User user);
+
+    List<SubtopicProgress> findByUserIdAndSubtopic_Topic_Course_Id(
+            Long userId,
+            String courseId
+    );
 }

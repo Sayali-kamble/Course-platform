@@ -7,5 +7,6 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import java.util.List;
 
 public interface SubTopicRepository extends JpaRepository<Subtopic, String> {
-    List<Subtopic> findByTopic(Topic topic);
+
+    long countByTopic_Course_Id(String courseId);
 }

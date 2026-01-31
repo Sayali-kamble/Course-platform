@@ -111,4 +111,19 @@ public class GlobalExceptionHandler {
                 .body(errorResponse);
     }
 
+
+    @ExceptionHandler(EnrollmentNotFoundException.class)
+    public ResponseEntity<ErrorResponse> handleEnrollmentNotFound(
+            EnrollmentNotFoundException ex) {
+
+        ErrorResponse errorResponse = new ErrorResponse(
+                "not_found",
+                ex.getMessage(),
+                Instant.now()
+        );
+
+        return ResponseEntity.status(HttpStatus.NOT_FOUND)
+                .body(errorResponse);
+    }
+
 }
