@@ -2,9 +2,11 @@ package com.edtech.course_platform.entity;
 
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.time.Instant;
 import java.time.LocalDateTime;
 
 @Entity
@@ -13,6 +15,7 @@ import java.time.LocalDateTime;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
+@Builder
 public class SubtopicProgress {
 
     @Id
@@ -27,12 +30,5 @@ public class SubtopicProgress {
     @JoinColumn(name = "subtopic_id", nullable = false)
     private Subtopic subtopic;
 
-    @ManyToOne
-    @JoinColumn(name = "enrollment_id", nullable = false)
-    private Enrollment enrollment;
-
-    @Column(nullable = false)
-    private boolean completed = false;
-
-    private LocalDateTime completedAt;
+    private Instant completedAt;
 }

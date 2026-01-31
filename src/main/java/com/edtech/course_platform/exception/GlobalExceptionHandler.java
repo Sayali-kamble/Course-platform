@@ -82,4 +82,33 @@ public class GlobalExceptionHandler {
                 .body(errorResponse);
     }
 
+    @ExceptionHandler(EnrollmentRequiredException.class)
+    public ResponseEntity<ErrorResponse> handleEnrollmentRequired(
+            EnrollmentRequiredException ex
+    ) {
+        ErrorResponse errorResponse = new ErrorResponse(
+                "Forbidden",
+                ex.getMessage(),
+                Instant.now()
+                );
+
+        return ResponseEntity
+                .status(HttpStatus.FORBIDDEN)
+                .body(errorResponse);
+    }
+
+    @ExceptionHandler(SubtopicNotFoundException.class)
+    public ResponseEntity<ErrorResponse> handleSubtopicNotFound(
+            SubtopicNotFoundException ex) {
+
+        ErrorResponse errorResponse = new ErrorResponse(
+                "not_found",
+                ex.getMessage(),
+                Instant.now()
+        );
+
+        return ResponseEntity.status(HttpStatus.NOT_FOUND)
+                .body(errorResponse);
+    }
+
 }
