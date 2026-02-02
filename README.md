@@ -17,12 +17,12 @@ After authentication, users can:
 ## Features
 
 - User authentication and authorization with JWT
-- View all courses
-- View a course by ID
-- Search courses and content
-- Course Enrollment
-- Progress Tracking
-- View Progress
+- Retrieves a list of all available courses.
+- Fetches detailed information of a specific course
+- Searches courses, topics, and content based on the given keyword.
+- Enrolls the authenticated user in the selected course.
+- Marks a subtopic as completed to track learning progress.
+- Retrieves the user’s progress for an enrolled course.
 
 ---
 
@@ -47,12 +47,12 @@ After authentication, users can:
 
 - POST /api/auth/register: Register a new user
 - POST /api/auth/login: Login an existing user
-- GET /api/courses: Retrieves a list of all available courses.
-- GET /api/courses/{courseId}: Fetches detailed information of a specific course
-- GET /api/search?q=velocity: Searches courses, topics, and content based on the given keyword.
-- POST /api/courses/{courseId}/enroll: Enrolls the authenticated user in the selected course.
-- POST /api/subtopics/{subtopicId}/complete: Marks a subtopic as completed to track learning progress.
-- GET /api/enrollments/{enrollmentId}/progress: Retrieves the user’s progress for an enrolled course.
+- GET /api/courses: View all courses
+- GET /api/courses/{courseId}: View a course by ID
+- GET /api/search?q=velocity: Search courses and content
+- POST /api/courses/{courseId}/enroll: Course Enrollment
+- POST /api/subtopics/{subtopicId}/complete: Progress Tracking
+- GET /api/enrollments/{enrollmentId}/progress: View Progress
 
 ---
 ## How to run this project
