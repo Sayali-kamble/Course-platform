@@ -25,6 +25,8 @@ public class SecurityConfig {
                                 SessionCreationPolicy.STATELESS))
                 .authorizeHttpRequests(auth -> auth
                         .requestMatchers(
+                                "/",
+                                "/error",
                                 "/api/courses",
                                 "/api/courses/**",
                                 "/api/search/**",
