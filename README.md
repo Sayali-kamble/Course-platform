@@ -104,6 +104,20 @@ http://localhost:8080
 
 ---
 
+## Deployment
+The application is deployed on Railway.
+- Base URL
+```text
+https://humorous-mercy-production.up.railway.app
+```
+
+- Swagger UI
+```text
+https://humorous-mercy-production.up.railway.app/swagger-ui/index.html
+```
+
+---
+
 ## Author
 
 Sayali Kamble<br>
